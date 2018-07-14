@@ -1,0 +1,29 @@
+{
+  "name": "@expanse/types",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "watch_without_deps": "tsc -w",
+    "build": "tsc && copyfiles -u 2 './lib/monorepo_scripts/**/*' ./scripts",
+    "clean": "shx rm -rf lib scripts",
+    "lint": "tslint --project .",
+    "manual:postpublish": "yarn build; node ./scripts/postpublish.js"
+  },
+  "dependencies": {
+    "@0xproject/utils": "^0.7.2",
+    "@types/node": "^8.0.53",
+    "bignumber.js": "~4.1.0",
+    "ethereum-types": "^0.0.2"
+  },
+  "devDependencies": {
+    "@0xproject/monorepo-scripts": "^0.2.2",
+    "@0xproject/tslint-config": "^0.4.21",
+    "copyfiles": "^1.2.0",
+    "make-promises-safe": "^1.1.0",
+    "shx": "^0.2.2",
+    "tslint": "5.8.0",
+    "typescript": "2.7.1"
+  }
+}
