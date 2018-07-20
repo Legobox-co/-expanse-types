@@ -75,6 +75,15 @@ export interface ExpanseMarket {
     maxOrderSize: BigNumber;
     lastTradePrice: BigNumber;
 }
+export interface ExpanseTicker {
+    transactionHash: string;
+    price: BigNumber;
+    size: BigNumber;
+    bid: BigNumber;
+    ask: BigNumber;
+    volume: BigNumber;
+    timestamp: BigNumber;
+}
 export interface ExpanseMarketRequest {
     id: string;
     baseTokenAddress: string;
@@ -82,4 +91,22 @@ export interface ExpanseMarketRequest {
     baseTokenDecimals: number;
     quoteTokenDecimals: number;
     quoteIncrement: BigNumber;
+}
+export interface ExpanseEvent {
+    baseTokenAddress: string;
+    quoteTokenAddress: string;
+    order: ExpanseOrderSigned;
+}
+export interface RadarFill extends ExpanseEvent {
+    transactionHash: string;
+    blockNumber: number;
+    maker: string;
+    taker: string;
+    feeRecipient: string;
+    paidMakerFee: BigNumber;
+    paidTakerFee: BigNumber;
+    filledBaseTokenAmount: BigNumber;
+    filledQuoteTokenAmount: BigNumber;
+    orderHash: string;
+    timestamp: number;
 }
