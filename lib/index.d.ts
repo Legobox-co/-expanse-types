@@ -97,7 +97,7 @@ export interface ExpanseEvent {
     quoteTokenAddress: string;
     order: ExpanseOrderSigned;
 }
-export interface RadarFill extends ExpanseEvent {
+export interface ExpanseFill extends ExpanseEvent {
     transactionHash: string;
     blockNumber: number;
     maker: string;
