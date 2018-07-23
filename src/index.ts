@@ -20,6 +20,11 @@ export enum UserOrderType {
 	SELL = 'SELL'
 }
 
+export enum ExpanseOrderStatus {
+    FILLED = 'FILLED',
+    OPEN = 'OPEN'
+}
+
 export enum ExpanseResponseStatus{
     SUCCESS = 'success',
     ERROR = 'error'
@@ -71,6 +76,7 @@ export interface ExpanseOrderSigned {
     exchangeContractAddress: string;
     feeRecipient: string;
     expirationUnixTimestampSec: BigNumber;
+    status: ExpanseOrderStatus;
 }
 
 export interface ExpanseMarket {
