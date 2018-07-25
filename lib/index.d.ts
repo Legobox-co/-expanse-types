@@ -26,8 +26,24 @@ export declare enum ExpanseResponseStatus {
     ERROR = "error",
 }
 export interface ExpanseOrderUnsigned {
+    maker: string;
+    taker: string;
+    makerFee: BigNumber;
+    takerFee: BigNumber;
+    makerTokenAmount: BigNumber;
+    takerTokenAmount: BigNumber;
     makerTokenAddress: string;
     takerTokenAddress: string;
+    salt: BigNumber;
+    exchangeContractAddress: '';
+    feeRecipient: string;
+    expirationUnixTimestampSec: '';
+}
+export interface ExpanseToken {
+    address: string;
+    decimals: number;
+    name: string;
+    symbol: string;
 }
 export interface ExpanseLimitOrderRequest {
     type: UserOrderType;
@@ -114,4 +130,11 @@ export interface ExpanseFill extends ExpanseEvent {
     filledQuoteTokenAmount: BigNumber;
     orderHash: string;
     timestamp: number;
+}
+export interface ExpanseMarketOrderResponse {
+    averagePrice: BigNumber;
+    bestPrice: BigNumber;
+    worstPrice: BigNumber;
+    spread: BigNumber;
+    orders: ExpanseOrderSigned[];
 }
