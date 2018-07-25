@@ -69,16 +69,16 @@ export interface ExpanseMarketOrderRequest{
 	quantity : BigNumber;
 }
 
-export interface ExpanseToken{
-	address: string;
-	symbol: string;
-	name: string;
-	decimals: number;
-	zeroex_official: boolean;
-	active: boolean;
-	createdDate: string;
-	quote: boolean;
-}
+// export interface ExpanseToken{
+// 	address: string;
+// 	symbol: string;
+// 	name: string;
+// 	decimals: number;
+// 	zeroex_official: boolean;
+// 	active: boolean;
+// 	createdDate: string;
+// 	quote: boolean;
+// }
 
 export interface ExpanseResponse{
     message: string,
