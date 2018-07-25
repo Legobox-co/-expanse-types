@@ -1,7 +1,7 @@
 import BigNumber from 'bignumber.js'
 
 export interface ExpanseOrder{
-	maker: string;
+    maker: string;
   taker: string;
   makerFee: BigNumber;
   takerFee: BigNumber;
@@ -31,8 +31,25 @@ export enum ExpanseResponseStatus{
 }
 
 export interface ExpanseOrderUnsigned{
-	makerTokenAddress: string,
-	takerTokenAddress: string,
+	maker: string;
+    taker: string;
+    makerFee: BigNumber;
+    takerFee: BigNumber;
+    makerTokenAmount: BigNumber;
+    takerTokenAmount: BigNumber;
+    makerTokenAddress: string; // token address the maker is offering.
+    takerTokenAddress: string; // token address the maker is requesting.
+    salt: BigNumber;
+    exchangeContractAddress: '';
+    feeRecipient: string;
+    expirationUnixTimestampSec: '';
+}
+
+export interface ExpanseToken {
+    address: string,
+    decimals: number,
+    name: string,
+    symbol: string
 }
 
 export interface ExpanseLimitOrderRequest{
@@ -131,4 +148,13 @@ export interface ExpanseFill extends ExpanseEvent {
   filledQuoteTokenAmount: BigNumber; // converted
   orderHash: string;
   timestamp: number;
+}
+
+
+export interface ExpanseMarketOrderResponse{
+    averagePrice: BigNumber;
+    bestPrice: BigNumber;
+    worstPrice: BigNumber;
+    spread: BigNumber;
+    orders: ExpanseOrderSigned[];
 }
