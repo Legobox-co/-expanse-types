@@ -13,6 +13,20 @@ export interface ExpanseOrder {
     feeRecipient: string;
     expirationUnixTimestampSec: BigNumber;
 }
+export interface ExpanseOrderUnsigned {
+    maker: 'SET';
+    taker: 'SET';
+    makerFee: BigNumber;
+    takerFee: BigNumber;
+    makerTokenAmount: BigNumber;
+    takerTokenAmount: BigNumber;
+    makerTokenAddress: string;
+    takerTokenAddress: string;
+    salt: BigNumber;
+    exchangeContractAddress: string;
+    feeRecipient: string;
+    expirationUnixTimestampSec: BigNumber;
+}
 export declare enum UserOrderType {
     BUY = "BUY",
     SELL = "SELL",
@@ -24,20 +38,6 @@ export declare enum ExpanseOrderStatus {
 export declare enum ExpanseResponseStatus {
     SUCCESS = "success",
     ERROR = "error",
-}
-export interface ExpanseOrderUnsigned {
-    maker: string;
-    taker: string;
-    makerFee: BigNumber;
-    takerFee: BigNumber;
-    makerTokenAmount: BigNumber;
-    takerTokenAmount: BigNumber;
-    makerTokenAddress: string;
-    takerTokenAddress: string;
-    salt: BigNumber;
-    exchangeContractAddress: '';
-    feeRecipient: string;
-    expirationUnixTimestampSec: '';
 }
 export interface ExpanseToken {
     address: string;
