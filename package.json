@@ -12,6 +12,7 @@
     "manual:postpublish": "yarn build; node ./scripts/postpublish.js"
   },
   "dependencies": {
+    "@0xproject/types": "^0.8.2",
     "@0xproject/utils": "^0.7.2",
     "@types/node": "^8.0.53",
     "bignumber.js": "~4.1.0",

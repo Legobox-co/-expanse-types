@@ -1,5 +1,5 @@
 import BigNumber from 'bignumber.js'
-
+import {ECSignature} from '@0xproject/types'
 export interface ExpanseOrder{
     maker: string;
     taker: string;
@@ -28,6 +28,11 @@ export interface ExpanseOrderUnsigned{
     feeRecipient: string;
     expirationUnixTimestampSec: BigNumber;
 }
+
+export interface ExpanseOrderSigned extends ExpanseOrder {
+    ecSignature: ECSignature
+}
+
 
 export enum UserOrderType {
 	BUY = 'BUY',
@@ -78,22 +83,6 @@ export interface ExpanseToken{
 export interface ExpanseResponse{
     message: string,
     status: ExpanseResponseStatus
-}
-
-export interface ExpanseOrderSigned {
-    maker: string;
-    taker: string;
-    makerFee: BigNumber;
-    takerFee: BigNumber;
-    makerTokenAmount: BigNumber;
-    takerTokenAmount: BigNumber;
-    makerTokenAddress: string;
-    takerTokenAddress: string;
-    salt: BigNumber;
-    exchangeContractAddress: string;
-    feeRecipient: string;
-    expirationUnixTimestampSec: BigNumber;
-    status: ExpanseOrderStatus;
 }
 
 export interface ExpanseMarket {
